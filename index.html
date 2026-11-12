@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffcd2e">
+  <meta name="description" content="周末搭子：为大学生找到学校附近、时间合适、收入透明的周末兼职。">
+  <title>周末搭子｜大学生周末兼职撮合</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#home" aria-label="周末搭子首页"><span class="brand-mark">✦</span><span>周末搭子</span><small>让好周末，更有收获</small></a>
+      <nav class="desktop-nav" aria-label="主导航"><button data-view="jobs" class="nav-link active">找兼职</button><button data-view="applications" class="nav-link">我的报名</button><button data-view="merchant" class="nav-link">商家招人</button></nav>
+      <button class="location" id="locationButton" aria-label="当前位置">📍 <span>大学城周边</span> <span class="chevron">⌄</span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> 这个周末，给自己多一种可能</div><h1>周末有空，<br><span>就去赚点生活费。</span></h1><p>找离学校近、时间合适、报酬透明的兼职。学生轻松报名，商家快速招到人。</p><div class="hero-actions"><button id="exploreButton" class="primary-btn">看看本周岗位 <span>↗</span></button><button data-view="merchant" class="secondary-btn">我是商家，发布岗位</button></div><div class="hero-proof"><div class="avatar-stack"><i>👩🏻‍🎓</i><i>👨🏻‍🎓</i><i>👩🏽‍🎓</i></div><span><strong id="jobTotal">24</strong> 个周末机会正在等你</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="art-halo"></div><div class="art-ticket ticket-a"><span>今日进账</span><strong>¥ 240 <small>↗</small></strong><em>周六 · 咖啡店协助</em></div><div class="art-person">👩🏻‍💻</div><div class="art-card ticket-b"><b>🎯 智能匹配</b><span>时间刚好 · 距离很近</span><div class="art-progress"><i></i></div></div><span class="spark spark-a">✳</span><span class="spark spark-b">✦</span></div>
+      </div>
+    </section>
+
+    <section class="shell quick-stats" aria-label="平台亮点"><div><span>🕒</span><strong>只看周末</strong><small>上课和赚钱不冲突</small></div><div><span>📍</span><strong>学校附近</strong><small>通勤距离一眼可见</small></div><div><span>💰</span><strong>报酬透明</strong><small>时薪与结算清清楚楚</small></div><div><span>🤝</span><strong>报名有进度</strong><small>每一步都心中有数</small></div></section>
+
+    <section class="shell content-area" id="contentArea">
+      <div id="jobsView" class="view active">
+        <div class="section-heading"><div><div class="section-kicker">EXPLORE OPPORTUNITIES</div><h2>本周末，找份合拍的兼职</h2><p>周末好机会，按你的时间和偏好来挑</p></div><div class="heading-side">✨ 已为你精选学校周边岗位</div></div>
+        <div class="filter-panel"><label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索岗位、商家或地点" autocomplete="off"><kbd>⌕</kbd></label><div class="filter-row"><div class="chip-group" id="dayFilters" aria-label="日期筛选"><button class="chip selected" data-day="all">全部时间</button><button class="chip" data-day="sat">周六</button><button class="chip" data-day="sun">周日</button></div><div class="select-wrap"><label for="categorySelect">岗位类型</label><select id="categorySelect"><option value="all">不限类型</option><option value="餐饮服务">餐饮服务</option><option value="活动执行">活动执行</option><option value="零售导购">零售导购</option><option value="教育助教">教育助教</option></select></div><div class="select-wrap"><label for="sortSelect">排序</label><select id="sortSelect"><option value="recommended">智能推荐</option><option value="pay">薪资最高</option><option value="distance">距离最近</option></select></div></div></div>
+        <div class="result-line"><strong id="resultCount">0</strong> 个适合你的岗位 <span>· 每个机会都值得认真看看</span></div>
+        <div class="job-grid" id="jobGrid"></div><div class="empty" id="emptyJobs" hidden><div>🔎</div><h3>暂时没有找到合适的岗位</h3><p>试试放宽筛选条件，新的周末机会还会持续出现。</p><button class="small-btn" id="resetFilters">清空筛选</button></div>
+      </div>
+
+      <div id="applicationsView" class="view"><div class="section-heading"><div><div class="section-kicker">MY APPLICATIONS</div><h2>我的报名</h2><p>每一份期待，都有迹可循</p></div></div><div class="application-list" id="applicationList"></div><div class="empty" id="emptyApplications" hidden><div>📮</div><h3>还没有报名记录</h3><p>从本周末的好机会开始，迈出第一步吧。</p><button class="small-btn" data-view="jobs">去找兼职</button></div></div>
+
+      <div id="merchantView" class="view"><div class="section-heading"><div><div class="section-kicker">FOR LOCAL BUSINESSES</div><h2>缺人手？周末搭子来帮忙</h2><p>把岗位说清楚，附近有空的同学更容易找到你</p></div></div><div class="merchant-layout"><div class="merchant-intro"><div class="merchant-illustration">☕</div><h3>一份好岗位，从透明开始</h3><p>清楚写明工作时间、地点和报酬，学生才能放心报名，商家也能更快找到合适的人。</p><div class="step"><span>01</span><div><strong>发布岗位</strong><small>填好时间、报酬和工作内容</small></div></div><div class="step"><span>02</span><div><strong>学生报名</strong><small>同学看到岗位后选择报名</small></div></div><div class="step"><span>03</span><div><strong>及时确认</strong><small>减少临时缺人和空跑</small></div></div><div class="demo-note">演示版：新发布的岗位保存在当前浏览器中。</div></div><form id="merchantForm" class="merchant-form"><h3>发布一个周末岗位</h3><div class="form-grid"><label>岗位名称 <em>*</em><input name="title" required maxlength="30" placeholder="例如：咖啡店周末店员"></label><label>商家名称 <em>*</em><input name="merchant" required maxlength="30" placeholder="例如：街角咖啡"></label><label>工作日期 <em>*</em><select name="day" required><option value="sat">本周六</option><option value="sun">本周日</option></select></label><label>工作时间 <em>*</em><input name="time" required placeholder="例如：10:00–18:00"></label><label>时薪（元） <em>*</em><input name="pay" type="number" min="1" max="999" required placeholder="例如：25"></label><label>招聘人数 <em>*</em><input name="spots" type="number" min="1" max="50" required placeholder="例如：3"></label><label>工作地点 <em>*</em><input name="place" required maxlength="40" placeholder="例如：大学城商业街"></label><label>岗位类型 <em>*</em><select name="category"><option>餐饮服务</option><option>活动执行</option><option>零售导购</option><option>教育助教</option></select></label></div><label class="full-label">工作内容与要求 <em>*</em><textarea name="description" required maxlength="300" rows="4" placeholder="告诉同学具体做什么、是否需要经验，以及结算方式"></textarea></label><button type="submit" class="primary-btn submit-btn">发布岗位 <span>↗</span></button></form></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><div><div class="footer-brand">✦ 周末搭子</div><p>让每一个周末，都有更好的选择。</p></div><div class="footer-meta">大学生周末兼职撮合 · 产品演示版<br>岗位与报名数据仅用于交互演示</div></div></footer>
+  <nav class="mobile-nav" aria-label="手机导航"><button data-view="jobs" class="active"><span>⌕</span>找兼职</button><button data-view="applications"><span>♡</span>我的报名</button><button data-view="merchant"><span>＋</span>商家发布</button></nav>
+  <dialog id="jobDialog" class="job-dialog"><button class="dialog-close" id="closeDialog" aria-label="关闭详情">×</button><div id="dialogBody"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
