@@ -75,7 +75,7 @@ flowchart LR
 | `enhancements.css` | 空闲时间、商家工作台、状态时间线和安全信息的样式 |
 | `app.js` | 示例岗位、匹配规则、时间冲突检查、状态流转、举报和本地数据保存 |
 
-岗位列表提供 6 条**虚构示例数据**。用户发布的岗位、报名记录、空闲时间、岗位开关状态和举报记录保存在当前浏览器的 `localStorage`，分别使用 `zhoumo-jobs-v1`、`zhoumo-applications-v1`、`zhoumo-availability-v1`、`zhoumo-job-state-v1` 和 `zhoumo-reports-v1`。页面会对用户填写后展示的文本进行 HTML 转义。旧版报名记录在读取时默认按「待商家确认」处理。
+岗位列表提供 12 条**虚构示例数据**，以江南大学蠡湖校区周边为演示场景。用户发布的岗位、报名记录、空闲时间、岗位开关状态和举报记录保存在当前浏览器的 `localStorage`，分别使用 `zhoumo-jobs-v1`、`zhoumo-applications-v1`、`zhoumo-availability-v1`、`zhoumo-job-state-v1` 和 `zhoumo-reports-v1`。页面会对用户填写后展示的文本进行 HTML 转义。旧版报名记录在读取时默认按「待商家确认」处理。
 
 ### 本地运行
 
