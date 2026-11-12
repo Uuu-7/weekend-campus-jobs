@@ -62,7 +62,7 @@ const duration = job => {
   return range ? Math.max(0, (range[1] - range[0]) / 60) : 0;
 };
 const estimate = job => Math.round(duration(job) * Number(job.pay));
-const acceptedCount = id => applications.filter(app => app.id === id && ['accepted','arrived','completed','settled'].includes(app.status)).length;
+const acceptedCount = id => applications.filter(app => app.id === id && ['accepted','checkin_pending','arrived','completed','settled'].includes(app.status)).length;
 const isClosed = job => Boolean(jobState[job.id]?.closed) || acceptedCount(job.id) >= Number(job.spots);
 const fitsAvailability = job => {
   const slot = availability[job.day];
@@ -209,7 +209,7 @@ function applyJob() {
   if (!fitsAvailability(job)) return toast('岗位时间不在你的空闲时段内，请先调整空闲时间');
   const conflicting = applications.find(app => {
     const other = jobs.find(item => item.id === app.id);
-    return other && ['pending','accepted','arrived','completed'].includes(app.status) && overlaps(job,other);
+    return other && ['pending','accepted','checkin_pending','arrived','completed'].includes(app.status) && overlaps(job,other);
   });
   if (conflicting) return toast('时间与已报名的「' + jobs.find(item => item.id === conflicting.id).title + '」重叠');
   applications.unshift({id:job.id,status:'pending',createdAt:Date.now(),history:[{status:'pending',at:Date.now()}]});
