@@ -26,7 +26,13 @@ const seed = [
   {id:'j3',title:'书店导购与理货',merchant:'纸间书屋',icon:'📚',category:'零售导购',day:'sun',time:'11:00–19:00',pay:25,spots:2,distance:0.6,place:'学府路书香广场',badge:'离校很近',settlement:'工作结束当日',description:'协助顾客找书、上架整理和简单收银。喜欢阅读、有耐心更合适。'},
   {id:'j4',title:'少儿美术课堂助教',merchant:'小树芽美术',icon:'🎨',category:'教育助教',day:'sun',time:'09:00–16:00',pay:35,spots:2,distance:2.1,place:'学苑社区中心',badge:'高时薪',settlement:'工作结束次日',description:'协助老师准备画材、照看课堂秩序和整理作品。美术相关专业优先，需有耐心。'},
   {id:'j5',title:'甜品店打包协助',merchant:'莓好甜品',icon:'🍰',category:'餐饮服务',day:'sun',time:'13:00–20:00',pay:27,spots:4,distance:1.2,place:'大学城北门商圈',badge:'周日可做',settlement:'工作结束当日',description:'负责订单打包、前台接待和外卖出餐核对。有人带教，工作环境轻松。'},
-  {id:'j6',title:'运动品牌周末导购',merchant:'动感运动',icon:'👟',category:'零售导购',day:'sat',time:'12:00–20:00',pay:30,spots:3,distance:1.8,place:'星河购物中心',badge:'薪资不错',settlement:'工作结束次日',description:'协助顾客试穿、陈列整理及活动介绍。喜欢运动、善于沟通的同学欢迎报名。'}
+  {id:'j6',title:'运动品牌周末导购',merchant:'动感运动',icon:'👟',category:'零售导购',day:'sat',time:'12:00–20:00',pay:30,spots:3,distance:1.8,place:'星河购物中心',badge:'薪资不错',settlement:'工作结束次日',description:'协助顾客试穿、陈列整理及活动介绍。喜欢运动、善于沟通的同学欢迎报名。'},
+  {id:'j7',title:'晨跑活动签到协助',merchant:'风行运动社',icon:'🏃',category:'活动执行',day:'sat',time:'07:00–13:00',pay:30,spots:4,distance:0.7,place:'江南大学蠡湖校区东门周边',badge:'早班机会',settlement:'工作结束当日',description:'负责选手签到、物资发放和赛道指引。需提前到场，适合喜欢运动与户外活动的同学。'},
+  {id:'j8',title:'奶茶店晚班打包员',merchant:'小满茶铺',icon:'🧋',category:'餐饮服务',day:'sat',time:'16:00–22:00',pay:26,spots:3,distance:0.9,place:'江南大学站周边',badge:'晚班可做',settlement:'工作结束当日',description:'核对外卖订单、封装饮品并整理操作台。提供岗前说明，无需相关经验。'},
+  {id:'j9',title:'亲子科学课堂助教',merchant:'好奇星球课堂',icon:'🔬',category:'教育助教',day:'sun',time:'09:00–16:00',pay:36,spots:2,distance:1.4,place:'长广溪附近社区活动室',badge:'高时薪',settlement:'工作结束次日',description:'协助老师准备实验材料、引导小组活动和整理教具。理工科或教育相关专业优先。'},
+  {id:'j10',title:'周末展台引导员',merchant:'橙点活动',icon:'🎤',category:'活动执行',day:'sun',time:'12:00–20:00',pay:29,spots:6,distance:2.3,place:'蠡湖大道商圈',badge:'多人招聘',settlement:'工作结束后 3 日内',description:'负责活动展台签到、路线引导和现场答疑。需要主动沟通，工作前提供统一培训。'},
+  {id:'j11',title:'社区书展理货员',merchant:'一页书展',icon:'📖',category:'零售导购',day:'sat',time:'09:00–16:00',pay:24,spots:2,distance:1.1,place:'江南大学蠡湖校区北门周边',badge:'轻松上手',settlement:'工作结束当日',description:'协助图书陈列、价签整理和读者引导。适合细心、喜欢阅读的同学。'},
+  {id:'j12',title:'烘焙体验课助教',merchant:'麦香烘焙工坊',icon:'🥐',category:'教育助教',day:'sun',time:'10:00–17:00',pay:31,spots:2,distance:1.7,place:'江南大学站周边',badge:'体验友好',settlement:'工作结束次日',description:'准备烘焙材料、协助老师照看学员和清理工作台。无需专业经验，认真负责即可。'}
 ];
 let jobs = [...read(KEY_JOBS, []), ...seed];
 let applications = read(KEY_APPS, []).map(app => ({ ...app, status: app.status || 'pending' }));
